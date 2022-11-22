@@ -10,7 +10,6 @@ config = dv2.defaults.update({
     'actor_ent': 3e-3,
     'loss_scales.kl': 1.0,
     'discount': 0.99,
-    'env_name': "HalfCheetahForwardBackward-v1"
 }).parse_flags()
 
 
@@ -19,7 +18,8 @@ def make_env():
     # env = ch.envs.ActionSpaceScaler(env)
     return env
 
-env = gym.make(config['env_name'])
+env_name = "HalfCheetahForwardBackward-v1"
+env = gym.make(env_name)
 print("env")
 print(env)
 print("env.sample_tasks(1)")
