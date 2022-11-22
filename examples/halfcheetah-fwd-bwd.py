@@ -19,7 +19,7 @@ def make_env():
     return env
 
 env_name = "HalfCheetahForwardBackward-v1"
-env = gym.make(env_name)
+env = l2l.gym.make(env_name)
 print("env")
 print(env)
 print("env.sample_tasks(1)")
