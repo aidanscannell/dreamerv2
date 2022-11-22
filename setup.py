@@ -1,6 +1,26 @@
 import setuptools
 import pathlib
 
+# python_requires = "~=3.7"
+
+install_requires=[
+    'gym[atari]',
+    'atari_py',
+    'crafter',
+    'dm_control',
+    'ruamel.yaml',
+    # 'tensorflow==2.6.4',
+    # 'tensorflow',
+    "tensorflow>=2.6.0; platform_system!='Darwin' or platform_machine!='arm64'",
+    "tensorflow-macos>=2.6.0; platform_system=='Darwin' and platform_machine=='arm64'",
+    'tensorflow_probability',
+    'learn2learn',
+],
+extras_require = {
+    "experiments": ["hydra-core", "palettable", "tikzplotlib"],
+    "examples": ["jupyter", "hydra-core"],
+    "dev": ["black[jupyter]", "pre-commit", "pyright", "isort", "pyflakes", "pytest"],
+}
 
 setuptools.setup(
     name='dreamerv2',
@@ -12,9 +32,6 @@ setuptools.setup(
     packages=['dreamerv2', 'dreamerv2.common'],
     package_data={'dreamerv2': ['configs.yaml']},
     entry_points={'console_scripts': ['dreamerv2=dreamerv2.train:main']},
-    install_requires=[
-        'gym[atari]', 'atari_py', 'crafter', 'dm_control', 'ruamel.yaml',
-        'tensorflow', 'tensorflow_probability'],
     classifiers=[
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
@@ -22,4 +39,7 @@ setuptools.setup(
         'Topic :: Games/Entertainment',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
     ],
+    # python_requires=python_requires,
+    install_requires=install_requires,
+    extras_require=extras_require,
 )
