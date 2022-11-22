@@ -2,6 +2,7 @@ import gym
 import cherry as ch
 import dreamerv2.api as dv2
 import learn2learn as l2l
+from learn2learn.gym.envs.mujoco import HalfCheetahForwardBackwardEnv
 
 config = dv2.defaults.update({
     'logdir': '~/logdir/minigrid',
@@ -19,9 +20,13 @@ def make_env():
     env = ch.envs.ActionSpaceScaler(env)
     return env
 
+task = 0
+# env = HalfCheetahForwardBackwardEnv(task=task)
+env = HalfCheetahForwardBackwardEnv()
+
 seed = 42
-num_workers = 3
-env = l2l.gym.AsyncVectorEnv([make_env for _ in range(num_workers)])
+# num_workers = 3
+# env = l2l.gym.AsyncVectorEnv([make_env for _ in range(num_workers)])
 print("env")
 print(env)
 env.seed(seed)
