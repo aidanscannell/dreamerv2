@@ -20,9 +20,10 @@ def make_env():
     env = ch.envs.ActionSpaceScaler(env)
     return env
 
-env_name = "HalfCheetah-v4"
-# env_name = "HalfCheetahForwardBackwardEnv"
-env = gym.make(env_name)
+# env_name = "HalfCheetah-v4"
+# # env_name = "HalfCheetahForwardBackwardEnv"
+# env = gym.make(env_name)
+gym.make('HalfCheetahForwardBackward-v1')
 
 task = 0
 # env = HalfCheetahForwardBackwardEnv(task=task)
