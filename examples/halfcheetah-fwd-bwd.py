@@ -1,7 +1,7 @@
 import gym
 import gym_minigrid
 import dreamerv2.api as dv2
-from learn2learn.gym.envs import HalfCheetahForwardBackward-v1
+import learn2learn as l2l
 
 config = dv2.defaults.update({
     'logdir': '~/logdir/minigrid',
