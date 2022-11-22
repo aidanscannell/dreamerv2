@@ -1,4 +1,5 @@
 import gym
+import cherry as ch
 import dreamerv2.api as dv2
 import learn2learn as l2l
 
@@ -14,18 +15,28 @@ config = dv2.defaults.update({
 
 
 def make_env():
-    env = gym.make(config['env_name'])
-    # env = ch.envs.ActionSpaceScaler(env)
+    env = gym.make(env_name)
+    env = ch.envs.ActionSpaceScaler(env)
     return env
 
-env_name = "HalfCheetahForwardBackward-v1"
-env = l2l.gym.make(env_name)
+seed = 42
+num_workers = 3
+env = l2l.gym.AsyncVectorEnv([make_env for _ in range(num_workers)])
 print("env")
 print(env)
-print("env.sample_tasks(1)")
-print(env.sample_tasks(1))
+env.seed(seed)
 print("env.get_task()")
 print(env.get_task())
+print("env.sample_tasks(1)")
+print(env.sample_tasks(1))
+env.set_task(env.sample_tasks(1)[0])
+print("env.get_task()")
+print(env.get_task())
+
+env_name = "HalfCheetahForwardBackward-v1"
+# env_name = "HalfCheetahForwardBackwardEnv"
+env = gym.make(env_name)
+# env = l2l.gym.make(env_name)
 
 action = env.action_space.sample()
 obs = env.step(action)
