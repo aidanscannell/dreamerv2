@@ -2,6 +2,18 @@
 
 [![PyPI](https://img.shields.io/pypi/v/dreamerv2.svg)](https://pypi.python.org/pypi/dreamerv2/#history)
 
+# Triton instructions
+
+Create virtual environment with
+``` sh
+module load py-virtualenv
+python -m venv dreamerv2-venv
+```
+Activate venv with
+``` sh
+source activate dreamerv2-venv/bin/activate
+```
+
 # Mastering Atari with Discrete World Models
 
 Implementation of the [DreamerV2][website] agent in TensorFlow 2. Training
