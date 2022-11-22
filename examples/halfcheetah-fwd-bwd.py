@@ -1,5 +1,4 @@
 import gym
-import gym_minigrid
 import dreamerv2.api as dv2
 import learn2learn as l2l
 
