@@ -1,5 +1,5 @@
 import gym
-import cherry as ch
+# import cherry as ch
 import dreamerv2.api as dv2
 import learn2learn as l2l
 from learn2learn.gym.envs.mujoco import HalfCheetahForwardBackwardEnv
