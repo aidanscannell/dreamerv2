@@ -11,9 +11,9 @@ install_requires=[
     'ruamel.yaml',
     # 'tensorflow==2.6.4',
     # 'tensorflow',
-    "tensorflow==2.6.0; platform_system!='Darwin' or platform_machine!='arm64'",
-    "tensorflow-macos==2.6.0; platform_system=='Darwin' and platform_machine=='arm64'",
-    'tensorflow_probability',
+    "tensorflow==2.4.2; platform_system!='Darwin' or platform_machine!='arm64'",
+    "tensorflow-macos==2.4.2; platform_system=='Darwin' and platform_machine=='arm64'",
+    'tensorflow_probability==0.12.2',
     'learn2learn',
 ],
 extras_require = {
